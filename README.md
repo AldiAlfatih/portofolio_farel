@@ -5,51 +5,74 @@ Built with **Next.js**, **Tailwind CSS**, and **Framer Motion**.
 
 ---
 
-## 🚀 Cara Paling Mudah Edit Konten (Tanpa Terminal/Coding)
-*(Sangat disarankan untuk orang non-IT / non-programmer)*
+## 💻 Panduan Setup VS Code untuk Pemula (Step-by-Step)
 
-Jika kamu hanya ingin mengubah teks, menambah pengalaman, atau mengganti foto tanpa harus menginstal aplikasi programmer yang rumit, ikuti cara "sekali klik" ini:
+Jika kamu ingin mengatur website ini di laptop barumu dari awal dan mengeditnya menggunakan **Visual Studio Code (VS Code)** secara mandiri, ikuti langkah-langkah di bawah ini secara berurutan.
 
-### Langkah 1: Online-kan Website Sekali Saja (Deploy)
-1. Buka situs [Vercel.com](https://vercel.com/) dan buat akun (Sign Up) menggunakan akun GitHub.
-2. Klik tombol **"Add New Project"**.
-3. Pilih repository **`portofolio_farel`** dari daftar GitHub-mu, lalu klik **"Import"**.
-4. Biarkan semua pengaturan standar, klik tombol **"Deploy"**.
-5. Tunggu 1 menit. Website-mu kini sudah punya link publik (contoh: `portofolio-farel.vercel.app`) dan bisa diakses semua orang!
+### Tahap 1: Instalasi Aplikasi Wajib
+Sebelum mulai, pastikan kamu mengunduh dan menginstal 3 aplikasi ini secara berurutan. Biarkan semua pengaturan instalasinya di pilihan bawaan (default/Next terus sampai selesai):
 
-### Langkah 2: Cara Edit Teks dan Data Website
-Setelah di-deploy, kamu tidak perlu repot-repot buka terminal untuk mengedit website. Cukup lakukan ini:
-1. Buka [GitHub.com](https://github.com/) dan masuk ke repositori **`portofolio_farel`** kamu.
-2. Buka folder `src` > `data` > klik file **`portfolio.ts`**.
-3. Klik tombol **ikon Pensil (Edit)** di pojok kanan atas file tersebut.
-4. Ubah teks yang kamu inginkan secara langsung (misalnya: mengubah tahun, mengganti nama organisasi, menambah riwayat kerja).
-5. Setelah selesai mengedit, scroll ke paling bawah halaman dan klik tombol hijau **"Commit changes"**.
+1. **[Git](https://git-scm.com/downloads)** - Agar laptopmu bisa mengambil kode dari GitHub.
+2. **[Node.js](https://nodejs.org/)** - Pilih tombol kiri bertuliskan **LTS (Recommended for Most Users)**. Ini adalah mesin agar website bisa berjalan di laptopmu.
+3. **[Visual Studio Code (VS Code)](https://code.visualstudio.com/)** - Aplikasi tempat kamu akan mengedit isi websitenya.
 
-**Selesai! 🎉** 
-Dalam waktu kurang dari 1 menit, Vercel akan otomatis mendeteksi perubahanmu di GitHub dan langsung meng-update website publikmu secara otomatis. Kamu tidak perlu melakukan apa-apa lagi!
+### Tahap 2: Mengambil Kode dari GitHub (Clone)
+1. Buka aplikasi **VS Code**.
+2. Di menu bagian paling atas, klik **Terminal** ➔ **New Terminal**. Akan muncul panel baru di bagian bawah layar.
+3. Di panel bawah tersebut, ketikkan perintah ini lalu tekan **Enter**:
+   ```bash
+   git clone https://github.com/AldiAlfatih/portofolio_farel.git
+   ```
+4. Setelah proses download selesai (muncul tulisan *done*), di menu bagian paling atas klik **File** ➔ **Open Folder...**
+5. Cari folder bernama **`portofolio_farel`** yang baru saja didownload, lalu pilih folder tersebut dan klik **Select Folder**.
+
+### Tahap 3: Menjalankan Website (Hanya Sekali di Awal)
+1. Karena foldernya baru dibuka, buka Terminal lagi: **Terminal** ➔ **New Terminal**.
+2. Ketikkan perintah ini untuk mendownload sistem pendukung (butuh koneksi internet):
+   ```bash
+   npm install
+   ```
+   *(Tunggu beberapa saat sampai prosesnya selesai)*
+3. Jika sudah selesai, nyalakan website dengan perintah:
+   ```bash
+   npm run dev
+   ```
+4. Buka browsermu (Chrome/Safari) dan buka alamat **`http://localhost:3000`**. Website portofoliomu akan muncul!
 
 ---
 
-## 💻 Cara Setup Tradisional untuk Programmer
-*(Jika kamu ingin menjalankan dan mengubah desain website secara offline di komputer)*
+## 📝 Cara Edit Konten dan Teks Website
+Setelah website berjalan, kamu bebas mengubah isi portofolio tanpa merusak desainnya.
 
-**Prerequisites:**
-Pastikan komputermu memiliki **Git** dan **Node.js**.
+1. Di panel kiri VS Code, cari folder **`src`** ➔ lalu folder **`data`** ➔ dan klik file **`portfolio.ts`**.
+2. File ini menyimpan semua data profil, pengalaman, dan riwayat karyamu.
+3. Cari teks yang ingin kamu ubah, misalnya nama, tahun jabatan, atau deskripsi pekerjaan, lalu ubah seperti mengetik biasa.
+4. Jangan lupa **Save** dengan menekan `Ctrl + S` (Windows) atau `Cmd + S` (Mac).
+5. Lihat browsermu (`http://localhost:3000`), perubahannya akan otomatis langsung muncul tanpa perlu di-refresh!
 
-1. Download kode (Terminal / Command Prompt):
-```bash
-git clone https://github.com/AldiAlfatih/portofolio_farel.git
-```
-2. Masuk ke folder:
-```bash
-cd portofolio_farel
-```
-3. Install sistem pendukung:
-```bash
-npm install
-```
-4. Jalankan website:
-```bash
-npm run dev
-```
-(Buka `http://localhost:3000` di browser)
+### Cara Memasukkan Gambar/Foto Baru:
+1. Siapkan fotomu (misalnya: `kantor-baru.jpg`).
+2. Di VS Code, cari folder bernama **`public`**.
+3. *Drag-and-drop* (seret) file fotomu dari komputermu ke dalam folder **`public`** di VS Code.
+4. Buka kembali file **`src/data/portfolio.ts`**, dan arahkan lokasi gambarnya ke file baru tersebut, contoh:
+   ```javascript
+   image: "/kantor-baru.jpg"
+   ```
+
+---
+
+## ☁️ Menyimpan Perubahan ke GitHub
+Jika kamu sudah selesai mengedit hari ini dan ingin menyimpannya ke internet (GitHub), lakukan 3 perintah wajib ini di Terminal:
+
+1. Matikan dulu server dengan klik panel Terminal di bawah, lalu tekan tombol **`Ctrl + C`**, dan ketik **`Y`** (lalu Enter).
+2. Simpan perubahannya dengan mengetik perintah berurutan ini:
+   ```bash
+   git add .
+   ```
+   ```bash
+   git commit -m "Update pengalaman kerja"
+   ```
+   ```bash
+   git push
+   ```
+Perubahanmu kini tersimpan dengan aman di GitHub!
