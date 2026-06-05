@@ -97,12 +97,24 @@ export default async function WorkDetail({ params }: Props) {
           </p>
         </div>
 
-        <div className="flex flex-col gap-6 pt-4">
-          <h3 className="text-2xl font-semibold">Documentation</h3>
-          <div className="w-full aspect-video rounded-3xl bg-gray-100 border border-gray-200 border-dashed flex items-center justify-center">
-            <p className="text-gray-400 text-sm">Documentation images placeholder</p>
+        {work.documentation && work.documentation.length > 0 && (
+          <div className="flex flex-col gap-6 pt-4">
+            <h3 className="text-2xl font-semibold">Documentation</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {work.documentation.map((docImage: string, idx: number) => (
+                <div key={idx} className="relative w-full aspect-video rounded-3xl overflow-hidden bg-gray-100 border border-gray-200">
+                  <Image
+                    src={docImage}
+                    alt={`${work.title} documentation ${idx + 1}`}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </PageContainer>
   );

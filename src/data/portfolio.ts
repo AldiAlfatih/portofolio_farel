@@ -44,7 +44,11 @@ export const portfolioData = {
         "Contributed to official booklets, web design content, and branding initiatives."
       ],
       results: "Strengthened institutional communication, supported stakeholder engagement, and contributed to public-facing communication assets.",
-      image: "/bi-sulsel.jpeg"
+      image: "/bi-sulsel.jpeg",
+      documentation: [
+        "/bi-sulsel.jpeg",
+        "/bi-sulsel.jpeg"
+      ]
     },
     {
       slug: "legal-administration",
